@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">slingo2</string>
+    <string name="sign_in">Sign in</string>
+    <string name="please_login_to_your_account">Please login to your account</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="forgot_password">forgot password</string>
+    <string name="or">OR</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="sign_up">Sign up</string>
+    <string name="create_a_new_account">create a new account</string>
+    <string name="full_name">Full Name</string>
+    <string name="email">Email</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="please_enter_the_code_we_sent_you">Please enter the code we sent you</string>
+    <string name="test_gmail_com">test@gmail.com</string>
+    <string name="_919834675632">+919834675632</string>
+    <string name="verify">VERIFY</string>
+    <string name="resend_code">Resend Code</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="gender">Gender:</string>
+    <string name="otp_verification">OTP Verification</string>
+    <string name="enter_the_otp_sent_to">Enter the OTP sent to</string>
+    <string name="didn_t_receieve_an_otp">Didn\'t receieve an OTP?</string>
+    <string name="resend_otp">Resend OTP</string>
+</resources>
