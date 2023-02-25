@@ -27,6 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:background="@drawable/round_black_dark_blue5_15"
+        android:textCursorDrawable="@drawable/text_cursor"
         android:hint="@string/email"
         android:maxLines="1"
         android:inputType="textEmailAddress"
@@ -47,6 +48,7 @@
         <EditText
             android:id="@+id/passwordET"
             android:layout_toStartOf="@+id/passwordIcon"
+            android:textCursorDrawable="@drawable/text_cursor"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@android:color/transparent"
@@ -87,61 +89,7 @@
         android:layout_marginTop="40dp"
         android:background="@drawable/round_back_primary_15"
         android:textColor="#ffff"/>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp">
-        <View
-            android:layout_centerVertical="true"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#1A000000"
-            android:layout_toStartOf="@+id/orTxt"
-            android:layout_marginEnd="20dp"
-            android:layout_marginStart="20dp" />
-        <TextView
-            android:id="@+id/orTxt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="@string/or"
-            android:textSize="12sp"
-            android:textColor="#80000000"/>
-        <View
-            android:layout_centerVertical="true"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#1A000000"
-            android:layout_toEndOf="@+id/orTxt"
-            android:layout_marginEnd="20dp"
-            android:layout_marginStart="20dp" />
-    </RelativeLayout>
-    <RelativeLayout
-        android:id="@+id/signinwithGoogle"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:background="@drawable/round_black_dark_blue5_15"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp">
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="20dp"
-            android:adjustViewBounds="true"
-            android:src="@drawable/google"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="@string/sign_in_with_google"
-            android:textColor="#E6000000"
-            android:textStyle="bold" />
-    </RelativeLayout>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -57,6 +57,7 @@
 
             <EditText
                 android:id="@+id/inputCode1"
+                android:background="@drawable/round_black_dark_blue5_15"
                 android:layout_width="40dp"
                 android:layout_height="45dp"
                 android:gravity="center"
@@ -71,6 +72,7 @@
 
             <EditText
                 android:id="@+id/inputCode2"
+                android:background="@drawable/round_black_dark_blue5_15"
                 android:layout_width="40dp"
                 android:layout_height="45dp"
                 android:gravity="center"
@@ -86,6 +88,7 @@
 
             <EditText
                 android:id="@+id/inputCode3"
+                android:background="@drawable/round_black_dark_blue5_15"
                 android:layout_width="40dp"
                 android:layout_height="45dp"
                 android:gravity="center"
@@ -101,6 +104,7 @@
 
             <EditText
                 android:id="@+id/inputCode4"
+                android:background="@drawable/round_black_dark_blue5_15"
                 android:layout_width="40dp"
                 android:layout_height="45dp"
                 android:gravity="center"
@@ -116,6 +120,7 @@
 
             <EditText
                 android:id="@+id/inputCode5"
+                android:background="@drawable/round_black_dark_blue5_15"
                 android:layout_width="40dp"
                 android:layout_height="45dp"
                 android:gravity="center"
@@ -130,6 +135,7 @@
                 tools:ignore="LabelFor"/>
             <EditText
                 android:id="@+id/inputCode6"
+                android:background="@drawable/round_black_dark_blue5_15"
                 android:layout_width="40dp"
                 android:layout_height="45dp"
                 android:gravity="center"
@@ -161,6 +167,7 @@
             <ProgressBar
                 android:id="@+id/progressBar2"
                 android:progressTint="@color/primary"
+                android:indeterminateDrawable="@drawable/progress_bar_colour"
                 android:layout_gravity="center"
                 android:visibility="gone"
                 android:layout_width="40dp"
