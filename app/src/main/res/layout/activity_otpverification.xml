@@ -167,7 +167,6 @@
             <ProgressBar
                 android:id="@+id/progressBar2"
                 android:progressTint="@color/primary"
-                android:indeterminateDrawable="@drawable/progress_bar_colour"
                 android:layout_gravity="center"
                 android:visibility="gone"
                 android:layout_width="40dp"
