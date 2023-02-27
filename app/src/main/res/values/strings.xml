@@ -4,7 +4,7 @@
     <string name="please_login_to_your_account">Please login to your account</string>
     <string name="username">username</string>
     <string name="password">password</string>
-    <string name="forgot_password">forgot password</string>
+    <string name="forgot_password">forgot password?</string>
     <string name="or">OR</string>
     <string name="sign_in_with_google">Sign in with Google</string>
     <string name="don_t_have_an_account">Don\'t have an account?</string>
@@ -27,4 +27,7 @@
     <string name="enter_the_otp_sent_to">Enter the OTP sent to</string>
     <string name="didn_t_receieve_an_otp">Didn\'t receieve an OTP?</string>
     <string name="resend_otp">Resend OTP</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="enter_your_email_to_proceed">Enter your email to proceed</string>
+    <string name="switch_back_to">Switch back to</string>
 </resources>

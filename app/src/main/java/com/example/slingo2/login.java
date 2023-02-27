@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -39,9 +40,9 @@ public class login extends AppCompatActivity {
     FirebaseUser mUser;
     private boolean passwordShowing=true;
     TextView createNewAccount;
-    RelativeLayout asignInWithGoogle;
-    GoogleSignInOptions gso;
-    GoogleSignInClient gsc;
+    TextView resetPassword;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,10 +56,14 @@ public class login extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
         LogIn = findViewById(R.id.signinBtn);
-        gso=new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestEmail()
-                .build();
-        gsc=GoogleSignIn.getClient(this,gso);
+        resetPassword=findViewById(R.id.sankalp);
+        resetPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(login.this,PasswordReset.class);
+                startActivity(intent);
+            }
+        });
 
 
         LogIn.setOnClickListener(new View.OnClickListener() {
@@ -93,7 +98,10 @@ public class login extends AppCompatActivity {
                 startActivity(new Intent(login.this, signUp.class));
             }
         });
+
+
     }
+
 
 
     @Override
