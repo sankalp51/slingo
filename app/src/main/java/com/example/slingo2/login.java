@@ -7,6 +7,7 @@ import androidx.appcompat.widget.AppCompatButton;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
@@ -42,6 +43,8 @@ public class login extends AppCompatActivity {
     TextView createNewAccount;
     TextView resetPassword;
 
+    public static final String SHARED_PREFS="SharedPrefs";
+
 
 
     @Override
@@ -56,12 +59,15 @@ public class login extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
         LogIn = findViewById(R.id.signinBtn);
-        resetPassword=findViewById(R.id.sankalp);
+        resetPassword=findViewById(R.id.forgotPasswordBtn);
+
+        checkBox();
+
         resetPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(login.this,PasswordReset.class);
-                startActivity(intent);
+                startActivity(new Intent(login.this,forgetPassword.class));
+                finish();
             }
         });
 
@@ -102,6 +108,15 @@ public class login extends AppCompatActivity {
 
     }
 
+    private void checkBox() {
+        SharedPreferences sharedPreferences=getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+        String check=sharedPreferences.getString("name","");
+        if(check.equals("true")){
+            sendUserToNextActivity();
+            finish();
+
+        }
+    }
 
 
     @Override
@@ -135,6 +150,11 @@ public class login extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
+                        SharedPreferences sharedPreferences=getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+                        SharedPreferences.Editor editor=sharedPreferences.edit();
+
+                        editor.putString("name","true");
+                        editor.apply();
                         progressDialog.dismiss();
                         sendUserToNextActivity();
                         Toast.makeText(login.this, "login successfully", Toast.LENGTH_SHORT).show();

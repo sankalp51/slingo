@@ -7,6 +7,7 @@
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".login">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -67,21 +68,17 @@
             android:padding="10dp"
             android:adjustViewBounds="true"
             android:layout_marginEnd="20dp"
-            android:src="@drawable/password_show"
-            android:contentDescription="view" />
+            android:src="@drawable/password_show"/>
     </RelativeLayout>
-
     <TextView
-        android:id="@+id/sankalp"
+        android:id="@+id/forgotPasswordBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
+        android:text="@string/forgot_password"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:text="@string/forgot_password"
         android:textColor="@color/primary"/>
-
-
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/signinBtn"
         android:layout_width="match_parent"
@@ -115,5 +112,6 @@
             android:textStyle="bold" />
 
 
-    </LinearLayout>
+         </LinearLayout>
+
 </LinearLayout>
