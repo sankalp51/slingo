@@ -79,7 +79,7 @@ public class OTPverification extends AppCompatActivity {
                                     progressBar.setVisibility(View.GONE);
                                     verifyBtn.setVisibility(View.VISIBLE);
                                     if (task.isSuccessful()){
-                                        Intent intent=new Intent(OTPverification.this,MainActivity.class);
+                                        Intent intent=new Intent(OTPverification.this,HomePage.class);
                                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                         startActivity(intent);
                                     }

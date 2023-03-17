@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".HomePage">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="@string/welcome_to_slingo"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <androidx.cardview.widget.CardView
+    android:layout_width="300dp"
+    android:layout_height="300dp"
+    android:layout_margin="10dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/imageSlider"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:iss_auto_cycle="true"
+            app:iss_period="1000"
+            app:iss_corner_radius="10"
+            app:iss_delay="1000"
+            app:iss_title_background="@drawable/gradient"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/startML"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:text="START"
+        android:textAllCaps="false"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/round_back_primary_15"
+        android:textColor="#ffff"/>
+
+
+
+</LinearLayout>
