@@ -11,13 +11,14 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
     public static final String SHARED_PREFS="SharedPrefs";
-    Button go;
+    Button go,interprete;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         go=findViewById(R.id.Btn);
+        interprete=findViewById(R.id.interprete);
         go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -28,6 +29,12 @@ public class MainActivity extends AppCompatActivity {
                 editor.apply();
                 startActivity(new Intent(MainActivity.this,login.class));
                 finish();
+            }
+        });
+        interprete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,SignInterpreter.class));
             }
         });
     }

@@ -14,10 +14,17 @@
         android:id="@+id/Btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="start"
         android:layout_gravity="center"
         android:gravity="center"
+        android:text="start"
         tools:layout_editor_absoluteX="157dp"
         tools:layout_editor_absoluteY="264dp" />
+
+    <Button
+        android:id="@+id/interprete"
+        android:layout_width="118dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Button" />
 
 </LinearLayout>
