@@ -8,9 +8,11 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     public static final String SHARED_PREFS="SharedPrefs";
+    TextView text1;
     Button go,interprete;
     @SuppressLint("MissingInflatedId")
     @Override
@@ -18,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         go=findViewById(R.id.Btn);
-        interprete=findViewById(R.id.interprete);
+        interprete=findViewById(R.id.interpreter);
+        text1=findViewById(R.id.profileActivity);
         go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -35,6 +38,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this,SignInterpreter.class));
+            }
+        });
+        text1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,MyProfile.class));
             }
         });
     }

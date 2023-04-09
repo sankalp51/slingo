@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,6 +10,19 @@
     tools:context=".MainActivity">
 
 
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/profileActivity"
+        android:layout_height="50dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="60dp"
+        android:text="Profile"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
     <Button
         android:id="@+id/Btn"
         android:layout_width="wrap_content"
@@ -17,14 +30,15 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:text="start"
-        tools:layout_editor_absoluteX="157dp"
-        tools:layout_editor_absoluteY="264dp" />
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="438dp" />
 
     <Button
-        android:id="@+id/interprete"
+        android:id="@+id/interpreter"
         android:layout_width="118dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="Button" />
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="@+id/Btn"
+        tools:layout_editor_absoluteY="258dp" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
