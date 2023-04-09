@@ -16,11 +16,9 @@
         android:layout_marginStart="105dp"
         android:layout_marginEnd="105dp"
         android:layout_marginBottom="21dp"
-        android:text="Camera"
+        android:text="@string/camera"
         android:textAllCaps="false"
-        android:textColor="#E6E4E4"
-        android:textSize="21sp"
-        android:textStyle="bold" />
+        android:textColor="#E6E4E4"/>
 
     <Button
         android:id="@+id/button2"
@@ -33,11 +31,9 @@
         android:layout_marginStart="105dp"
         android:layout_marginEnd="105dp"
         android:layout_marginBottom="46dp"
-        android:text="Gallery"
+        android:text="@string/gallery"
         android:textAllCaps="false"
-        android:textColor="#EDEDF4"
-        android:textSize="21sp"
-        android:textStyle="bold" />
+        android:textColor="#EDEDF4" />
 
     <ImageView
         android:layout_width="370sp"

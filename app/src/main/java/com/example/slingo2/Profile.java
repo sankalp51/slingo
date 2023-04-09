@@ -1,11 +1,19 @@
 package com.example.slingo2;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,31 +26,35 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class MyProfile extends AppCompatActivity {
+public class Profile extends Fragment {
+    public static final String SHARED_PREFS="SharedPrefs";
     private TextView textViewWelcome,textViewFullName,textViewEmail,textViewMobile,textViewGender;
 
     private String fullName,email,mobile,gender;
     private FirebaseAuth authProfile;
+    Button logout;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_profile);
-        textViewWelcome=findViewById(R.id.displayNameProfileSection);
-        textViewFullName=findViewById(R.id.textview_show_full_name);
-        textViewEmail=findViewById(R.id.textview_show_email);
-        textViewMobile=findViewById(R.id.textview_show_phone);
-        textViewGender=findViewById(R.id.textview_show_gender);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_profile, container, false);
+
+        textViewWelcome=view.findViewById(R.id.displayNameProfileSection);
+        textViewFullName=view.findViewById(R.id.textview_show_full_name);
+        textViewEmail=view.findViewById(R.id.textview_show_email);
+        textViewMobile=view.findViewById(R.id.textview_show_phone);
+        textViewGender=view.findViewById(R.id.textview_show_gender);
         authProfile=FirebaseAuth.getInstance();
         FirebaseUser firebaseUser=authProfile.getCurrentUser();
         if(firebaseUser==null){
-            Toast.makeText(this, "Something went wrong, user data is not available", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Something went wrong, user data is not available", Toast.LENGTH_SHORT).show();
         }
         else{
-
             showUserProfile(firebaseUser);
         }
+
+        return view;
     }
+
     private void showUserProfile(FirebaseUser firebaseUser){
         String uID=firebaseUser.getUid();
         //extract data from database
@@ -69,9 +81,11 @@ public class MyProfile extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(MyProfile.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Something went wrong", Toast.LENGTH_SHORT).show();
 
             }
         });
+
+
     }
 }

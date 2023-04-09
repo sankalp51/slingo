@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -25,6 +26,7 @@ import com.google.firebase.auth.PhoneAuthProvider;
 import java.util.concurrent.TimeUnit;
 
 public class OTPverification extends AppCompatActivity {
+    public static final String SHARED_PREFS="SharedPrefs";
     private EditText inputCode1,inputCode2,inputCode3,inputCode4,inputCode5,inputCode6;
     ProgressBar progressBar;
     AppCompatButton verifyBtn;
@@ -79,8 +81,13 @@ public class OTPverification extends AppCompatActivity {
                                     progressBar.setVisibility(View.GONE);
                                     verifyBtn.setVisibility(View.VISIBLE);
                                     if (task.isSuccessful()){
-                                        Intent intent=new Intent(OTPverification.this,HomePage.class);
+                                        Intent intent=new Intent(OTPverification.this,MainActivity.class);
                                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                        SharedPreferences sharedPreferences=getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+                                        SharedPreferences.Editor editor=sharedPreferences.edit();
+
+                                        editor.putString("name","true");
+                                        editor.apply();
                                         startActivity(intent);
                                     }
                                     else{

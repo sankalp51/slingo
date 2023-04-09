@@ -32,6 +32,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class signUp extends AppCompatActivity {
+    public static final String SHARED_PREFS="SharedPrefs";
     private boolean passwordShowing=false;
     private boolean conPasswordShowing=false;
     TextView alreadyHaveAnAccount;

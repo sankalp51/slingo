@@ -21,9 +21,6 @@
             android:name=".SignInterpreter"
             android:exported="false" />
         <activity
-            android:name=".HomePage"
-            android:exported="false" />
-        <activity
             android:name=".forgetPassword"
             android:exported="false" />
         <activity
@@ -47,8 +44,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
-        <activity android:name=".MyProfile"
-            android:exported="false"/>
     </application>
 
 </manifest>
