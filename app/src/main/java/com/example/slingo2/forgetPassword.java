@@ -43,6 +43,7 @@ public class forgetPassword extends AppCompatActivity {
                 String Email=email.getText().toString();
                 if(!Email.matches(valid)){
                     email.setError("Please enter a valid email");
+                    email.requestFocus();
                 }
                 else{
                     password();

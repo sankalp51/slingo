@@ -9,11 +9,13 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +27,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 public class Profile extends Fragment {
     public static final String SHARED_PREFS="SharedPrefs";
@@ -33,24 +36,35 @@ public class Profile extends Fragment {
     private String fullName,email,mobile,gender;
     private FirebaseAuth authProfile;
     Button logout;
+    ImageView profilepic;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
         textViewWelcome=view.findViewById(R.id.displayNameProfileSection);
+        profilepic=view.findViewById(R.id.profilePic);
         textViewFullName=view.findViewById(R.id.textview_show_full_name);
         textViewEmail=view.findViewById(R.id.textview_show_email);
         textViewMobile=view.findViewById(R.id.textview_show_phone);
         textViewGender=view.findViewById(R.id.textview_show_gender);
         authProfile=FirebaseAuth.getInstance();
         FirebaseUser firebaseUser=authProfile.getCurrentUser();
+        Uri uri=firebaseUser.getPhotoUrl();
+        Picasso.get().load(uri).into(profilepic);
         if(firebaseUser==null){
             Toast.makeText(getActivity(), "Something went wrong, user data is not available", Toast.LENGTH_SHORT).show();
         }
         else{
             showUserProfile(firebaseUser);
         }
+
+        profilepic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(),UploadProfilePicture.class));
+            }
+        });
 
         return view;
     }

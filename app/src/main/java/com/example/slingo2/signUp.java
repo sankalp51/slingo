@@ -137,27 +137,32 @@ public class signUp extends AppCompatActivity {
 
         if(fName.isEmpty()||fName.matches("[a-zA-Z]+")){
             fullName.setError("Enter your full name please");
+            fullName.requestFocus();
             progressBar.setVisibility(View.GONE);
             signUpbtn.setVisibility(View.VISIBLE);
         }
         else if(!email.matches(emailPattern)){
             inputEmail.setError("Please enter a valid email address");
             progressBar.setVisibility(View.GONE);
+            inputEmail.requestFocus();
             signUpbtn.setVisibility(View.VISIBLE);
         }
-        else if(mobile.isEmpty()&&mobile.matches("^[+][0-9]{10,13}$")||mobile.length()>10){
+        else if(mobile.length()!=10){
             phoneNumber.setError("Enter a valid mobile number");
             progressBar.setVisibility(View.GONE);
+            phoneNumber.requestFocus();
             signUpbtn.setVisibility(View.VISIBLE);
         }
         else if(password.isEmpty()||password.length()<6){
             inputPassword.setError("Password doesn't match with confirm password");
             progressBar.setVisibility(View.GONE);
+            inputPassword.requestFocus();
             signUpbtn.setVisibility(View.VISIBLE);
         }
         else if (!password.equals(conPassword)) {
             inputConPassword.setError("Password is not matching in both the fields");
             progressBar.setVisibility(View.GONE);
+            inputConPassword.requestFocus();
             signUpbtn.setVisibility(View.VISIBLE);
         }
         else if(!male && !female){

@@ -20,7 +20,6 @@ import com.example.slingo2.ml.Slingo;
 
 import org.tensorflow.lite.DataType;
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
-
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -29,7 +28,7 @@ public class SignInterpreter extends AppCompatActivity {
     Button camera,gallery;
     ImageView imageView;
     TextView result;
-    int imageSize=300;
+    int imageSize=600;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,13 +36,14 @@ public class SignInterpreter extends AppCompatActivity {
         setContentView(R.layout.activity_sign_interpreter);
         camera=findViewById(R.id.button);
         gallery=findViewById(R.id.button2);
+
         result=findViewById(R.id.result);
         imageView=findViewById(R.id.imageView);
 
         camera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(checkSelfPermission(android.Manifest.permission.CAMERA)== PackageManager.PERMISSION_GRANTED){
+                if(checkSelfPermission(Manifest.permission.CAMERA)== PackageManager.PERMISSION_GRANTED){
                     Intent cameraIntent=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     startActivityForResult(cameraIntent,3);
                 }
@@ -59,13 +59,14 @@ public class SignInterpreter extends AppCompatActivity {
                 startActivityForResult(galleryIntent, 1);
             }
         });
+
     }
     public void classifyImage(Bitmap image){
         try {
             Slingo model = Slingo.newInstance(getApplicationContext());
 
             // Creates inputs for reference.
-            TensorBuffer inputFeature0 = TensorBuffer.createFixedSize(new int[]{1, 300, 300, 3}, DataType.FLOAT32);
+            TensorBuffer inputFeature0 = TensorBuffer.createFixedSize(new int[]{1, 600, 600, 3}, DataType.FLOAT32);
             ByteBuffer byteBuffer=ByteBuffer.allocateDirect(4*imageSize*imageSize*3);
             byteBuffer.order(ByteOrder.nativeOrder());
 
@@ -98,7 +99,7 @@ public class SignInterpreter extends AppCompatActivity {
                 }
 
             }
-            String[] classes = {"A", "B", "C"};
+            String[] classes = {"A", "B", "C","D","E","F","G","H","I","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y"};
             result.setText(classes[maxPos]);
 
             // Releases model resources if no longer used.
@@ -107,6 +108,8 @@ public class SignInterpreter extends AppCompatActivity {
             // TODO Handle the exception
         }
     }
+
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         //get picture from camera
         if(resultCode == RESULT_OK){
@@ -132,6 +135,6 @@ public class SignInterpreter extends AppCompatActivity {
                 classifyImage(image);
             }
         }
-        super.onActivityResult(requestCode, resultCode, data);
-    }
+        super.onActivityResult(requestCode, resultCode,data);
+}
 }

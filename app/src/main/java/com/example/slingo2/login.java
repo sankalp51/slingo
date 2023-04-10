@@ -139,8 +139,10 @@ public class login extends AppCompatActivity {
         String password=inputPassword.getText().toString();
         if (!email.matches(emailPattern)) {
             inputEmail.setError("Please enter a valid email address");
+            inputEmail.requestFocus();
         } else if (password.isEmpty() || password.length() < 6) {
             inputPassword.setError("Please enter the correct password");
+            inputPassword.requestFocus();
         } else {
             progressDialog.setMessage("Please wait while login...");
             progressDialog.setTitle("Login");
@@ -162,6 +164,8 @@ public class login extends AppCompatActivity {
                     else{
                         progressDialog.dismiss();
                         Toast.makeText(login.this, "Account doesn't exist, create a new account", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(login.this,signUp.class));
+                        finish();
                     }
                 }
             });

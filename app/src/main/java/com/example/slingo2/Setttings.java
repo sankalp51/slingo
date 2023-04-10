@@ -18,10 +18,13 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class Setttings extends Fragment {
     private ListView listView;
     private ArrayAdapter<String> adapter;
-    private String[] items = {"Edit Profile", "Update Password","Update email", "Log out"};
+    private String[] items = {"Edit Profile", "Update Password", "Log out"};
+    FirebaseAuth auth;
     public static final String SHARED_PREFS="SharedPrefs";
 
     @Override
@@ -35,15 +38,13 @@ public class Setttings extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 if(i==0){
+                    startActivity(new Intent(getContext(),UpdateProfile.class));
 
                 }
                 else if(i==1){
                     startActivity(new Intent(getContext(),forgetPassword.class));
                 }
                 else if(i==2){
-
-                }
-                else if(i==3){
                     AlertDialog.Builder builder=new AlertDialog.Builder(getContext());
                     builder.setMessage("Are your sure you want to log out?")
                                     .setCancelable(false)

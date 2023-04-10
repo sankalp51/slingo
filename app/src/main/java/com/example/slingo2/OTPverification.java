@@ -81,14 +81,14 @@ public class OTPverification extends AppCompatActivity {
                                     progressBar.setVisibility(View.GONE);
                                     verifyBtn.setVisibility(View.VISIBLE);
                                     if (task.isSuccessful()){
-                                        Intent intent=new Intent(OTPverification.this,MainActivity.class);
-                                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                        Intent intent=new Intent(OTPverification.this,login.class);
                                         SharedPreferences sharedPreferences=getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
                                         SharedPreferences.Editor editor=sharedPreferences.edit();
 
                                         editor.putString("name","true");
                                         editor.apply();
                                         startActivity(intent);
+                                        finish();
                                     }
                                     else{
                                         Toast.makeText(OTPverification.this, "The verification code entered is invalid", Toast.LENGTH_SHORT).show();
@@ -109,7 +109,7 @@ public class OTPverification extends AppCompatActivity {
                         new PhoneAuthProvider.OnVerificationStateChangedCallbacks(){
                             @Override
                             public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-
+                                Toast.makeText(OTPverification.this, "Account created successfully", Toast.LENGTH_SHORT).show();
                             }
 
                             @Override

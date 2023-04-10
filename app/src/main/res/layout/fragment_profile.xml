@@ -17,11 +17,11 @@
             android:background="@color/primary">
 
             <ImageView
+                android:id="@+id/profilePic"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:id="@+id/profilePic"
                 android:layout_centerInParent="true"
-                android:background="@drawable/user"/>
+                android:background="@drawable/user" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -134,7 +134,6 @@
                 android:layout_marginTop="20dp"
                 android:layout_below="@+id/textview_show_phone"
                 android:background="@color/grey_font"/>
-
 
         </RelativeLayout>
     </LinearLayout>

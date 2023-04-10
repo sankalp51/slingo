@@ -41,4 +41,7 @@
     <string name="log_out">Log Out</string>
     <string name="gallery">GALLERY</string>
     <string name="camera">CAMERA</string>
+    <string name="upload_your_new_profile_picture">Upload your new profile picture</string>
+    <string name="choose_picture">Choose picture</string>
+    <string name="upload">Upload</string>
 </resources>
