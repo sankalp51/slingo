@@ -42,7 +42,7 @@ public class Setttings extends Fragment {
 
                 }
                 else if(i==1){
-                    startActivity(new Intent(getContext(),forgetPassword.class));
+                    startActivity(new Intent(getContext(),ForgotPasswordInside.class));
                 }
                 else if(i==2){
                     AlertDialog.Builder builder=new AlertDialog.Builder(getContext());

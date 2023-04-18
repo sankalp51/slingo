@@ -82,11 +82,6 @@ public class OTPverification extends AppCompatActivity {
                                     verifyBtn.setVisibility(View.VISIBLE);
                                     if (task.isSuccessful()){
                                         Intent intent=new Intent(OTPverification.this,login.class);
-                                        SharedPreferences sharedPreferences=getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
-                                        SharedPreferences.Editor editor=sharedPreferences.edit();
-
-                                        editor.putString("name","true");
-                                        editor.apply();
                                         startActivity(intent);
                                         finish();
                                     }
